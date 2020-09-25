@@ -37,7 +37,7 @@ module ShopifyApp
         if ActiveJob::Base.respond_to?(:log_arguments?, true)
           WebhooksManagerJob.log_arguments = false
           ScripttagsManagerJob.log_arguments = false
-        elsif ActiveJob::Logging::LogSubscriber.private_method_defined?(:args_info, true)
+        elsif ActiveJob::Logging::LogSubscriber.private_method_defined?(:args_info)
           ActiveJob::Logging::LogSubscriber.prepend(RedactJobParams)
         end
       end
