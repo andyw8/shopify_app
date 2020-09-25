@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 module ShopifyApp
   class WebhooksManagerJob < ActiveJob::Base
-    self.log_arguments = false
-
     queue_as do
       ShopifyApp.configuration.webhooks_manager_queue_name
     end

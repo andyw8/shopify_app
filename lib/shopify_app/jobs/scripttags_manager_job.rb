@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 module ShopifyApp
   class ScripttagsManagerJob < ActiveJob::Base
-    self.log_arguments = false
-
     queue_as do
       ShopifyApp.configuration.scripttags_manager_queue_name
     end
